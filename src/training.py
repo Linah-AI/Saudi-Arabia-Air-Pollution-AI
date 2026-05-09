@@ -32,6 +32,6 @@ def train_model(df):
     # تدريب الموديل
     model.fit(X_train, y_train)
 
-    print("✅ Model Trained Successfully")
+    print("Model Trained Successfully")
 
     return model, X_test, y_test
