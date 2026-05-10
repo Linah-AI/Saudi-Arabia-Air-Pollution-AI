@@ -22,10 +22,12 @@ def main():
     print(f"Model configured with {model.get_n_leaves()} decision leaves.")
     print("-" * 60)
 
-    # 3. Model Visualization Phase
+   # 3. Model Visualization Phase
     # ---------------------------------
     print("Generating Decision Tree visualization...")
-    feature_names = X.columns.tolist() if hasattr(X, "columns") else ["Year", "Pollution Type"]
+    
+    # تثبيت الأسماء باللغة الإنجليزية
+    feature_names = ["Year", "Pollution Type"]
     
     plt.figure(figsize=(20, 10))
     plot_tree(
@@ -36,9 +38,6 @@ def main():
         rounded=True,
         fontsize=10,
     )
-    plt.title("Makkah Pollution Decision Tree Structure")
-    print("Note: Close the Decision Tree window to proceed to the evaluation phase.")
-    plt.show()
 
     # 4. Evaluation Phase (Cross-Validation)
     # ---------------------------------
