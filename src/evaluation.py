@@ -1,12 +1,12 @@
 # =============================================================================
 # evaluation.py
-# Evaluates the trained model using Leave-One-Out Cross-Validation (LOOCV)
+# Evaluates the trained model using Stratified 5-Fold Cross-Validation
 # and generates a confusion matrix and classification report.
 #
-# Why LOOCV?
-#   With 500 rows the dataset is still relatively small. LOOCV ensures every
-#   single record is used as a test point exactly once, giving the most
-#   reliable estimate of generalisation performance without wasting data.
+# Why Stratified 5-Fold CV?
+#   With 500 rows, Stratified K-Fold provides a reliable generalisation
+#   estimate while preserving class distribution in every fold. It is more
+#   computationally efficient than LOOCV on this dataset size.
 #
 # Reference:
 #   Bishop, C. M. (2006). Pattern Recognition and Machine Learning. Springer.
