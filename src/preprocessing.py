@@ -26,8 +26,7 @@ import pandas as pd
 # Feature columns used for model training
 FEATURE_COLS = ["dust_pct", "smoking_pct", "waste_pct", "combustion_pct"]
 
-# Risk label thresholds based on TotalPollutionScore percentiles (P25 / P75)
-# Computed from the 26-row original dataset.
+# Risk label thresholds based on TotalPollutionScore distribution# Computed from the 26-row original dataset.
 LOW_THRESHOLD    = 28.0   # below P25  → Low
 HIGH_THRESHOLD   = 45.0   # above P75  → High
 
@@ -122,10 +121,10 @@ def assign_risk_labels(df: pd.DataFrame) -> pd.DataFrame:
     """
     Computes TotalPollutionScore and assigns Low / Medium / High labels.
 
-    Thresholds (percentile-based, derived from the 26-row original dataset):
-        Low    : TotalPollutionScore < 28.0   (below P25)
-        Medium : 28.0 <= score < 45.0         (P25–P75)
-        High   : score >= 45.0                (above P75)
+    Thresholds (selected based on TotalPollutionScore distribution across the 26-row original dataset):
+        Low    : TotalPollutionScore < 28.0
+        Medium : 28.0 <= score < 45.0
+        High   : score >= 45.0
 
     Parameters
     ----------
