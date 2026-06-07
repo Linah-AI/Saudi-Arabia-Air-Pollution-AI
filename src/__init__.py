@@ -1,1 +1,1 @@
-"""Package initializer for Makkah-Air-Pollution-AI source modules."""
+"""Package initializer for Saudi Arabia Air Pollution Risk Classification source modules."""
